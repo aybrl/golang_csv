@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+body {
+    background-color: rgba(238, 238, 238, 0.829);
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: rgb(245, 245, 245);
+    box-shadow: 15px 15px 15px -20px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 500px;
+    width: 50%;
+    height: 90%;
+    overflow: auto;
+}
+
+#filePicker {
+    padding: 8px 12px;
+    background-color: rgb(26, 26, 26);
+    color: white;
+    border-radius: 15px;
+    margin-top: 20px;
+    font-size: 0.8em;
+    font-family: 'Lato', sans-serif;
+
+}
+
+.activeFilePicker {
+    background-color: rgb(25, 187, 111) !important;
+}
+
+
+#calculLaunch {
+    width: 150px;
+    height: 30px;
+    margin: 10px 0 0 0;
+    background-color: rgb(26, 26, 26);
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+.box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 95%;
+    height: fit-content;
+    margin: 1%;
+    padding: 1%;
+}
+
+.operation-form{
+    margin: 20px 0 0 0;
+}
+
+.vert-sep {
+    margin-bottom: 15px;
+    width: 80%;
+    opacity: 0.2;
+}
+
+#results {
+    min-height: 150px;
+    overflow: auto;
+}
+
+.result-text {
+    font-weight: bold;
+    margin: 10px;
+}
+
+.result-error{
+    color: rgb(211, 20, 20)
+}
+
+.result-success{
+    color: rgb(20, 211, 84)
+}
+
+h4 {
+    margin: 0;
+}
+
+#bottomName{
+    font-size: 0.82em;
+    margin-bottom: 5px;
+    margin-top: auto;
+}

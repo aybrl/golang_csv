@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/index.css">
+        <title>CSV Interpreter</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+                <h2>Analyseur des fichiers CSV</h2>
+            </div>
+
+            <!--File-->
+            <div class="box" id="upload-box">
+                <hr class="vert-sep">
+                <h4>1. Téléchargement du fichier</h4>
+                <input type="file" name="file" id="file" class="inputfile" hidden/>
+                <label for="file" id="filePicker">Choisir un fichier</label>
+            </div>
+
+            <!--Settings-->
+            <div class="box" id="settings-box">
+                <hr class="vert-sep">
+                <h4>2. Paramètres du fichier</h4>
+                <div class="operation-form">
+                    <input type="checkbox" value="withHeader" id="withHeader" checked>
+                    <label>Avec en-tête</label>
+                    <label style="margin-left: 50px; margin-right: 5px;">Séparateur :</label>
+                    <select id="file-sep" style="width: 40px; font-size: 0.85em; font-weight: bold; text-align: center;">
+                        <option>;</option>
+                        <option>,</option>
+                    </select>
+                </div>
+            </div>
+
+            <!--Operations-->
+            <div class="box" id="operations-box">
+                <hr class="vert-sep">
+                <h4>3. Choix des opérations</h4>
+                <div class="operation-form">
+
+                    <input type="checkbox" value="Somme" id="somme">
+                    <label>Somme</label>
+                    <input type="checkbox" value="Moyenne" id="moyenne">
+                    <label>Moyenne</label>
+                    <input type="checkbox" value="Mediane" id="mediane">
+                    <label>Mediane</label>
+                    <input type="checkbox" value="Maximale" id="maximum">
+                    <label>Valeur Maximale</label>
+                    
+                    <hr style = "width: 80%; opacity: 0.2; margin-top: 15px; margin-bottom: 15px;">
+
+                    <input type="radio" value="all" id="all" name="selection" checked onclick="disableSelectionForm()">
+                    <label>Fichier entier</label>
+                    <input type="radio" value="custom" id="custom" name="selection" onclick="allowLineSelection()">
+                    <label>Selection personnalisée</label>
+                    <br>
+                    <div id="selection-form" style="margin-top: 20px; display: block;">
+                        <label>De</label>
+                        <input type="number" name="from" id="from" style="width: 50px;" value="1" min="0" disabled>
+                        <label>à</label>
+                        <input type="number" name="to" id="to" style="width: 50px;" min="2" disabled>
+                    </div>
+
+                    <hr style = "width: 50%; opacity: 0.2; margin-top: 20px;">
+            
+                    <input type="button" value="Lancer le Calcul" id="calculLaunch" >
+
+                </div>
+            </div>
+
+            <!--Results-->
+            <div class="box" id="results-box" style="display: block;">
+                <hr class="vert-sep">
+                <h4>4. Résultats de Calcul</h4>
+                <div id="results"></div>
+            </div>
+
+            <!--Errors-->
+            <div class="box" id="error-box" style="display: none;"> 
+                <hr class="vert-sep" >
+                <h4>Message d'erreur</h4>
+                <div id="errors"></div>
+            </div>
+
+            <!--Credit :)-->
+            <div id="bottomName">
+                Projet réalisé par Mohammed Ayoub BERHILI
+            </div>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>
