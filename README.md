@@ -1,2 +1,2 @@
-# golang_csv
+# CSV File mini interpreter
 CSV interpreter in Golang
